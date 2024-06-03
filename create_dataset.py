@@ -1,3 +1,4 @@
+import os
 import torch
 import numpy as np
 import fipy as fp
@@ -84,7 +85,7 @@ def run_simulation(temps: List[float]) -> Tuple[TensorDataset, TensorDataset, Te
 
     total_samples = dataset.shape[0]
     train_size = int(0.8 * total_samples)
-    validation_size = total_samples * 0.2 // 2
+    validation_size = int(total_samples * 0.2 // 2)
     indices = np.random.permutation(total_samples)
     dataset_shuffled = dataset[indices]
     train_indices = indices[:train_size]
@@ -113,6 +114,8 @@ def run_simulation(temps: List[float]) -> Tuple[TensorDataset, TensorDataset, Te
 
 # Running the simulation
 if __name__ == "__main__":
+    if not os.path.exists('./data'):
+        os.makedirs('./data')
     temperatures = np.array([100])  # Define temperature range
     train_dataset, validation_dataset, test_dataset, D, mean_train, std_train, full_dataset = run_simulation(temperatures)
     torch.save({'temperatures': temperatures,
