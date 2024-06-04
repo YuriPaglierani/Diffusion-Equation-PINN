@@ -29,6 +29,10 @@ Integrate with Advanced Techniques, like Fourier Neural Operators.
 
 Use also the boundary conditions to have a better coherence with the solution we want to model (there is the class Pinn2 for this)
 
+Use advanced techniques for sampling better the domain, and augment your data.
+
+Use techniques to balance the different contributions of the losses.
+
 Use libraries that make PINNs friendly (try for example this open source framework PINA https://mathlab.github.io/PINA/_rst/tutorials/tutorial1/tutorial.html)
 
 ## License
