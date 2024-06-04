@@ -1,0 +1,7 @@
+{
+    "lr": 0.001,
+    "lr_step": 1,
+    "lr_gamma": 0.965,
+    "num_epochs": 10,
+    "batch_size": 256
+}
