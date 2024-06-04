@@ -275,7 +275,7 @@ class Trainer:
             ep = self.checkpoint(ep)
             print(f"====== Epoch {ep} done ======")
         print("====== Training done ======")
-        self.dumper()
+        # self.dumper()
 
     def checkpoint(self, ep: int) -> int:
         """
